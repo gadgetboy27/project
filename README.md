@@ -9,3 +9,5 @@ This is a website built with Vite.
 
 ## Deployment
 This site is deployed to Netlify. Push changes to the `main` branch to trigger a deployment.
+
+## Extra's
