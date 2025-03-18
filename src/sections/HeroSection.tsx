@@ -1,5 +1,6 @@
 import React from 'react';
 import { Section } from '../components/Section';
+import nissanLeafImage from '../images/nissan_leaf_charging.jpg'; // Import the image
 
 export function HeroSection() {
   return (
@@ -20,7 +21,7 @@ export function HeroSection() {
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0">
             <img 
-              src="src/images/nissan_leaf_charging.jpg?auto=format&fit=crop&q=80&w=800"
+              src={nissanLeafImage} // Use the imported image
               alt="Nissan Leaf"
               className="rounded-lg shadow-xl"
               loading="eager"
