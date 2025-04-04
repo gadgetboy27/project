@@ -22,30 +22,32 @@ export function Header() {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map(({ id, label, isButton }) => (
-              isButton ? (
-                <a
-                  key={id}
-                  href={`#${id}`}
-                  className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
-                >
-                  {label}
-                </a>
-              ) : (
-                <a
-                  key={id}
-                  href={`#${id}`}
-                  className={`relative text-gray-600 hover:text-green-600 transition-colors ${
-                    activeSection === id ? 'text-green-600' : ''
-                  }`}
-                >
-                  {label}
-                  {activeSection === id && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-600 -mb-2" />
-                  )}
-                </a>
-              )
-            ))}
+          {navItems.map(({ id, label, isButton }) => (
+  isButton ? (
+    <a
+      key={id}
+      href={`#${id}`}
+      className={`px-4 py-2 rounded-lg transition-colors duration-300 ${
+        activeSection === 'contact' ? 'bg-blue-600 text-white' : 'bg-green-600 text-white'
+      } hover:bg-blue-700`}
+    >
+      {label}
+    </a>
+  ) : (
+    <a
+      key={id}
+      href={`#${id}`}
+      className={`relative text-gray-600 hover:text-green-600 transition-colors ${
+        activeSection === id ? 'text-green-600' : ''
+      }`}
+    >
+      {label}
+      {activeSection === id && (
+        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-600 -mb-2" />
+      )}
+    </a>
+  )
+))}
           </div>
 
           <button className="md:hidden">
