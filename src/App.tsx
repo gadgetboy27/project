@@ -24,7 +24,7 @@ function App() {
           <div className="grid md:grid-cols-3 gap-8">
             <BatteryPackage
               capacity="40 kWh"
-              price="$17,200incl NZD"
+              price="$17,200 incl NZD"
               features={[
                 "280km range extended",
                 "2-year warranty",
@@ -36,7 +36,7 @@ function App() {
             />
             <BatteryPackage
               capacity="50 kWh"
-              price="$18,700incl NZD"
+              price="$18,700 incl NZD"
               features={[
                 "350km range extended",
                 "2-year warranty",
@@ -50,7 +50,7 @@ function App() {
             />
             <BatteryPackage
               capacity="62 kWh"
-              price="$20,200incl NZD"
+              price="$20,500 incl NZD"
               features={[
                 "420km range extended",
                 "2-year warranty",
