@@ -18,7 +18,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Battery className="w-8 h-8 text-green-600" />
-            <span className="text-xl font-bold">EV Power Upgrade</span>
+            <span className="text-xl font-bold">Electrified Garage</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
