@@ -24,9 +24,9 @@ function App() {
           <div className="grid md:grid-cols-3 gap-8">
             <BatteryPackage
               capacity="40 kWh"
-              price="$11,865 NZD"
+              price="$17,200incl NZD"
               features={[
-                "150-mile range (240km)",
+                "280km range extended",
                 "2-year warranty",
                 "Professional installation",
                 "24/7 support"
@@ -36,9 +36,9 @@ function App() {
             />
             <BatteryPackage
               capacity="50 kWh"
-              price="$13,863 NZD"
+              price="$18,700incl NZD"
               features={[
-                "180-mile range (290km)",
+                "350km range extended",
                 "2-year warranty",
                 "Professional installation",
                 "24/7 support",
@@ -50,9 +50,9 @@ function App() {
             />
             <BatteryPackage
               capacity="62 kWh"
-              price="$15,196 NZD"
+              price="$20,200incl NZD"
               features={[
-                "230-mile range (370km)",
+                "420km range extended",
                 "2-year warranty",
                 "Professional installation",
                 "24/7 support",
