@@ -1,12 +1,12 @@
-import React from 'react';
-import { Battery, Menu } from 'lucide-react';
-import { useActiveSection } from '../hooks/useActiveSection';
+import React from "react";
+import { Battery, Menu } from "lucide-react";
+import { useActiveSection } from "../hooks/useActiveSection";
 
 const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'services', label: 'Services' },
-  { id: 'contact', label: 'Contact' },
-  { id: 'booking', label: 'Book Now', isButton: true }
+  { id: "home", label: "Home" },
+  { id: "services", label: "Services" },
+  { id: "contact", label: "Contact" },
+  { id: "booking", label: "Book Now", isButton: true },
 ];
 
 export function Header() {
@@ -20,34 +20,35 @@ export function Header() {
             <Battery className="w-8 h-8 text-green-600" />
             <span className="text-xl font-bold">Electrified Garage</span>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-8">
-          {navItems.map(({ id, label, isButton }) => (
-  isButton ? (
-    <a
-      key={id}
-      href={`#${id}`}
-      className={`px-4 py-2 rounded-lg transition-colors duration-300 ${
-        activeSection === 'contact' ? 'bg-blue-600 text-white' : 'bg-green-600 text-white'
-      } hover:bg-blue-700`}
-    >
-      {label}
-    </a>
-  ) : (
-    <a
-      key={id}
-      href={`#${id}`}
-      className={`relative text-gray-600 hover:text-green-600 transition-colors ${
-        activeSection === id ? 'text-green-600' : ''
-      }`}
-    >
-      {label}
-      {activeSection === id && (
-        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-600 -mb-2" />
-      )}
-    </a>
-  )
-))}
+            {navItems.map(({ id, label, isButton }) =>
+              isButton ? (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  className={`px-4 py-2 rounded-lg transition-colors duration-300 ${
+                    activeSection === "contact"
+                      ? "bg-blue-600 text-white"
+                      : "bg-green-600 text-white"
+                  } hover:bg-blue-700`}
+                >
+                  {label}
+                </a>
+              ) : (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  className={`px-4 py-2 rounded-lg transition-colors ${
+                    activeSection === id
+                      ? "bg-blue-600 text-white hover:bg-blue-700"
+                      : "bg-green-600 text-white hover:bg-green-700"
+                  }`}
+                >
+                  {label}
+                </a>
+              )
+            )}
           </div>
 
           <button className="md:hidden">
