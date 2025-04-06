@@ -13,7 +13,7 @@ export function useActiveSection() {
         });
       },
       {
-        rootMargin: '-10% 0px -40% 0px',
+        rootMargin: '-20% 1px -5% 1px',
         threshold: [0.2, 0.5]
       }
     );
