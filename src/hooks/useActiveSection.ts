@@ -16,7 +16,7 @@ export function useActiveSection() {
         });
       },
       {
-        rootMargin: '-20% 0px -0% 0px', // Fine-tune to make the observer less sensitive
+        rootMargin: '-20% 0px -10% 0px', // Fine-tune to make the observer less sensitive
         threshold: [0.2] // Trigger when at least 50% of a section is in view
       }
     );
