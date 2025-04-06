@@ -17,7 +17,7 @@ export function useActiveSection() {
       },
       {
         rootMargin: '-10% 0px -10% 0px', // Fine-tune to make the observer less sensitive
-        threshold: [0.5] // Trigger when at least 50% of a section is in view
+        threshold: [0.10] // Trigger when at least 50% of a section is in view
       }
     );
 
