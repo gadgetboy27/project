@@ -4,45 +4,28 @@ export function useActiveSection() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    let observer: IntersectionObserver;
-
-    const observeSections = () => {
-      const sections = document.querySelectorAll('section[id]');
-      if (observer) observer.disconnect(); // clean old observers
-
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Check if the intersection ratio is enough for a section to be considered active
+            if (entry.intersectionRatio >= 0.5) {
               setActiveSection(entry.target.id);
             }
-          });
-        },
-        {
-          rootMargin: '-20% 1px -20% 1px',
-          threshold: 0.5
-        }
-      );
+          }
+        });
+      },
+      {
+        rootMargin: '-10% 0px -10% 0px', // Fine-tune to make the observer less sensitive
+        threshold: [0.5] // Trigger when at least 50% of a section is in view
+      }
+    );
 
-      sections.forEach((section) => observer.observe(section));
-    };
-
-    // Initial observation
-    observeSections();
-
-    // MutationObserver to detect lazy-loaded sections
-    const mutationObserver = new MutationObserver(() => {
-      observeSections(); // re-observe when new sections are added
-    });
-
-    mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
 
     return () => {
-      if (observer) observer.disconnect();
-      mutationObserver.disconnect();
+      sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
 
