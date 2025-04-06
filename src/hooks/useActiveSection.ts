@@ -20,7 +20,7 @@ export function useActiveSection() {
         },
         {
           rootMargin: '-20% 1px -5% 1px',
-          threshold: [0.2, 0.5]
+          threshold: 0.25
         }
       );
 
